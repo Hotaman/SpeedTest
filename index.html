@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Speed test page</title>
+        <style>
+            .statsDisplay {
+                font-size: 1.5em;
+                margin: -10px 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="forPage.js"></script>
+        <script>
+            window.howslow = new HowSlowForPage('forSW.js');
+        </script>
+
+        <p>Speed test results - you need some pics and/or data to see results!</p>
+        <p>Your page content goes here</p>
+
+        <footer>
+            <p class="statsDisplay">
+                Estimated bandwidth: <b id="bwDisplay">unknown </b>KBps
+                Estimated RTT: <b id="rttDisplay">unknown </b>ms
+            </p>
+        </footer>
+
+        <script>
+            // Refresh bandwidth and RTT display
+            const bwDisplay = document.getElementById('bwDisplay');
+            const rttDisplay = document.getElementById('rttDisplay');
+            setInterval(function() {
+                if (window.howslow) {
+                    bwDisplay.innerHTML = window.howslow.bandwidth || 'unknown ';
+                    rttDisplay.innerHTML = window.howslow.rtt || 'unknown ';
+                }
+            }, 500);
+        </script>
+
+    </body>
+</html>
