@@ -8,7 +8,7 @@ Currently, this repo shows how to add a simple connection speed display to your 
 
 Additional work is planned to add telemetry, storage and analysis for verifying compliance. I am exploring methods to add this tool to SIS and other tools commonly used by schools.
 
-##How do I?
+##Instructions
 ###Step One
 Copy forPage.js and forSW.js to the root of your website.
 
